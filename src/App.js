@@ -114,6 +114,7 @@ class App extends React.Component {
 	// onClick take the contents of the input and use it to filter employees returned
 	handleSubmit = (e) => {
 		e.preventDefault();
+		// If searchbar is empty, entire list is returned
 		if (this.state.search === '') {
 			this.searchEmployees();
 		} else {
