@@ -3,6 +3,7 @@ import './App.css';
 import api from './utils/api';
 import EmployeeTable from './components/EmployeeTable/index';
 import SearchBar from './components/SearchBar';
+import Directory from './components/Directory';
 
 // main app class
 class App extends React.Component {
@@ -143,7 +144,9 @@ class App extends React.Component {
 					handleSortPhone={this.handleSortPhone}
 					handleSortEmail={this.handleSortEmail}
 					handleSortName={this.handleSortName}
-				></EmployeeTable>
+				>
+					<Directory employees={this.state.employees} />
+				</EmployeeTable>
 			</div>
 		);
 	}

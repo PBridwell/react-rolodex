@@ -1,5 +1,5 @@
 import axios from 'axios';
-const URL = 'https://randomuser.me/api/';
+const URL = 'https://jsonplaceholder.typicode.com/users';
 
 // make the axios call to the jsonplaceholder site and get a users list
 export default {
