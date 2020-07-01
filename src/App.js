@@ -1,22 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import api from './utils/api';
-
 import EmployeeTable from './components/EmployeeTable/index';
 import SearchBar from './components/SearchBar';
 import Directory from './components/Directory';
-
-// main app class
-// class App extends React.Component {
-// 	// states
-// 	state = {
-// 		employees: [],
-// 		search: '',
-// 		sortID: false,
-// 		sortName: false,
-// 		sortEmail: false,
-// 		sortPhone: false,
-// 	};
 
 const App = () => {
 	const [employees, setEmployees] = useState([]);
@@ -35,10 +22,6 @@ const App = () => {
 			.catch((err) => console.log(err));
 	};
 
-	// Perform search for all employees on page load
-	// componentDidMount() {
-	// 	this.searchEmployees();
-	// }
 	useEffect(() => {
 		searchEmployees();
 	}, []);
@@ -47,62 +30,46 @@ const App = () => {
 		const idSort = employees;
 		if (!sortID) {
 			idSort.sort((a, b) => (a.id > b.id ? 1 : -1));
-			// seState({
-			// 	employees: idSort,
-			// 	sortID: true,
-			// });
 			setEmployees(idSort);
 			setSortID(true);
 			// Functionality for alternate click
 		} else {
 			idSort.reverse((a, b) => (a.id < b.id ? -1 : 1));
-			// this.setState({
-			// 	employees: idSort,
-			// 	sortID: false,
-			// });
 			setEmployees(idSort);
 			setSortID(false);
 		}
 	};
 
 	// //  sort by name function, reversing then resorting on alternating clicks
-	// handleSortName = () => {
-	// 	const nameSort = this.state.employees;
-	// 	if (!this.state.sortName) {
-	// 		// 1 and -1 values for ascending and descending
-	// 		nameSort.sort((a, b) => (a.name > b.name ? 1 : -1));
-	// 		this.setState({
-	// 			employees: nameSort,
-	// 			sortName: true,
-	// 		});
-	// 	} else {
-	// 		nameSort.reverse((a, b) => (a.name < b.name ? -1 : 1));
-	// 		this.setState({
-	// 			employees: nameSort,
-	// 			sortName: false,
-	// 		});
-	// 	}
-	// };
+	const handleSortName = () => {
+		const nameSort = employees;
+		if (!sortName) {
+			// 1 and -1 values for ascending and descending
+			nameSort.sort((a, b) => (a.name > b.name ? 1 : -1));
+			setEmployees(nameSort);
+			setSortName(true);
+		} else {
+			nameSort.reverse((a, b) => (a.name < b.name ? -1 : 1));
+			setEmployees(nameSort);
+			setSortName(false);
+		}
+	};
 
 	// //  sort by email function, reversing then resorting on alternating clicks
-	// handleSortEmail = () => {
-	// 	const emailSort = this.state.employees;
-	// 	if (!this.state.sortEmail) {
-	// 		emailSort.sort((a, b) => (a.email > b.email ? 1 : -1));
-	// 		this.setState({
-	// 			employees: emailSort,
-	// 			sortEmail: true,
-	// 		});
-	// 	} else {
-	// 		emailSort.reverse((a, b) => (a.email < b.email ? -1 : 1));
-	// 		this.setState({
-	// 			employees: emailSort,
-	// 			sortEmail: false,
-	// 		});
-	// 	}
-	// };
+	const handleSortEmail = () => {
+		const emailSort = employees;
+		if (!sortEmail) {
+			emailSort.sort((a, b) => (a.email > b.email ? 1 : -1));
+			setEmployees(emailSort);
+			setSortEmail(true);
+		} else {
+			emailSort.reverse((a, b) => (a.email < b.email ? -1 : 1));
+			setEmployees(emailSort);
+			setSortEmail(false);
+		}
+	};
 
-	// //  sort by phone function, reversing then resorting on alternating clicks
+	// //  sort by phone function, reversing then resorting on each click
 	const handleSortPhone = () => {
 		const phoneSort = employees;
 		if (!sortPhone) {
@@ -148,8 +115,8 @@ const App = () => {
 			<EmployeeTable
 				handleSortID={handleSortID}
 				handleSortPhone={handleSortPhone}
-				// handleSortEmail={this.handleSortEmail}
-				// handleSortName={this.handleSortName}
+				handleSortEmail={handleSortEmail}
+				handleSortName={handleSortName}
 			>
 				<Directory employees={employees} />
 			</EmployeeTable>
