@@ -103,50 +103,38 @@ const App = () => {
 	// };
 
 	// //  sort by phone function, reversing then resorting on alternating clicks
-	// handleSortPhone = () => {
-	// 	const phoneSort = this.state.employees;
-	// 	if (!this.state.sortPhone) {
-	// 		phoneSort.sort((a, b) => (a.phone > b.phone ? 1 : -1));
-	// 		this.setState({
-	// 			employees: phoneSort,
-	// 			sortPhone: true,
-	// 		});
-	// 	} else {
-	// 		phoneSort.reverse((a, b) => (a.phone < b.phone ? -1 : 1));
-	// 		this.setState({
-	// 			employees: phoneSort,
-	// 			sortPhone: false,
-	// 		});
-	// 	}
-	// };
+	const handleSortPhone = () => {
+		const phoneSort = employees;
+		if (!sortPhone) {
+			phoneSort.sort((a, b) => (a.phone > b.phone ? 1 : -1));
+			setEmployees(phoneSort);
+			setSortPhone(true);
+		} else {
+			phoneSort.reverse((a, b) => (a.phone < b.phone ? -1 : 1));
+			setEmployees(phoneSort);
+			setSortPhone(false);
+		}
+	};
 
 	// //  update the state.search value instantly as input is entered in form
 	const handleSearch = (e) => {
 		const value = e.target.value;
-		// const name = e.target.name;
-		// this.setState({
-		// 	[name]: value,
-		// });
 		setSearch(value);
 		console.log(search);
 	};
 
-	// // onClick take the contents of the input and use it to filter employees returned
-	// handleSubmit = (e) => {
-	// 	e.preventDefault();
-	// 	// If searchbar is empty, entire list is returned
-	// 	if (this.state.search === '') {
-	// 		this.searchEmployees();
-	// 	} else {
-	// 		this.setState({
-	// 			employees: [
-	// 				...this.state.employees.filter((employee) =>
-	// 					employee.name.includes(this.state.search)
-	// 				),
-	// 			],
-	// 		});
-	// 	}
-	// };
+	// // onClick take the contents of the input and use it to filter employees
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		// If searchbar is empty, entire list is returned
+		if (search === '') {
+			this.searchEmployees();
+		} else {
+			setEmployees([
+				...employees.filter((employee) => employee.name.includes(search)),
+			]);
+		}
+	};
 
 	return (
 		<div className='text-center'>
@@ -154,12 +142,12 @@ const App = () => {
 			<SearchBar
 				value={search}
 				handleSearch={handleSearch}
-				// handleSubmit={this.handleSubmit}
+				handleSubmit={handleSubmit}
 			></SearchBar>
 
 			<EmployeeTable
 				handleSortID={handleSortID}
-				// handleSortPhone={this.handleSortPhone}
+				handleSortPhone={handleSortPhone}
 				// handleSortEmail={this.handleSortEmail}
 				// handleSortName={this.handleSortName}
 			>
