@@ -3,10 +3,10 @@ import React from 'react';
 // create navbar with search form inline
 function SearchBar(props) {
 	return (
-		<nav className='navbar navbar-light bg-light'>
+		<nav className='navbar navbar-dark bg-light'>
 			<h2>
-				<i className='fa fa-users' aria-hidden='true'></i> Welcome to Employee
-				Directory
+				<i className='fa fa-address-book' aria-hidden='true'></i> Welcome to the
+				React Rolodex
 			</h2>
 			{/* create the form and use handleSearch for input and HandleSubmit for button */}
 			<form className='form-inline'>
@@ -21,7 +21,7 @@ function SearchBar(props) {
 					id='search'
 				/>
 				<button
-					className='btn btn-outline-success my-2 my-sm-0'
+					className='btn btn-outline-warning my-2 my-sm-0'
 					type='submit'
 					onClick={props.handleSubmit}
 					style={{ padding: '5px', margin: '5px' }}

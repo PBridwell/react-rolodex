@@ -3,7 +3,7 @@ import React from 'react';
 // setup the table headers with sort
 function EmployeeTable(props) {
 	return (
-		<table className='table'>
+		<table className='table table-striped table-dark'>
 			<thead className='thead-light'>
 				<tr>
 					<th scope='col'>

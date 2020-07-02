@@ -95,7 +95,7 @@ const App = () => {
 		e.preventDefault();
 		// If searchbar is empty, entire list is returned
 		if (search === '') {
-			this.searchEmployees();
+			searchEmployees();
 		} else {
 			setEmployees([
 				...employees.filter((employee) => employee.name.includes(search)),
