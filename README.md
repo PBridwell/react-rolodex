@@ -1,68 +1,48 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React-rolodex
 
-## Available Scripts
+![Badge](https://img.shields.io/static/v1?label=GitHub_User&message=PBridwell&color=<COLOR>?style=plastic)
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+This is a front-end only React app that uses a placeholder API to print a list of contacts to a page. State is managed through hooks and contacts can be sorted by multiple parameters
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Deployed App
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[React-Rolodex](https://pbridwell.github.io/react-rolodex/)
 
-### `npm test`
+## Table of contents
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Installation](#Installation)
+- [Tests](#Tests)
+- [Technologies](#Built-with)
+- [License](#License)
+- [Questions](#Questions)
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    The Application should be installed by running the following commands:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Run 'npm i' to install all dependencies and run 'npm run start' to initialize the react page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tests
 
-### `npm run eject`
+This app does not include jest tests
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Built With
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Javascript,CSS,HTML,React
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+MIT
 
-## Learn More
+## Questions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Patrick Bridwell** - _Lead Developer_
+  If you have any questions about the application, feel free to contact me.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [patbridwell@cox.net](Email)
+  <img src="https://avatars3.githubusercontent.com/u/56896214?v=4" alt="Smiley face" height="35" width="35">
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* [My Github Repository](https://api.github.com/users/PBridwell/repos)
+* [My personal Portfolio](https://pbridwell.github.io/)
